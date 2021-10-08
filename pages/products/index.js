@@ -2,9 +2,10 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
+import { products } from '../../util/database';
 
-export default function Home() {
+export default function Products() {
   return (
     <div>
       <Head>
@@ -22,9 +23,23 @@ export default function Home() {
           </Link>
         </nav>
       </header>
-
       <main className={styles.main}>
         <h1 className={styles.title}>Umbrella Shop</h1>
+        <ul>
+          {products.map((product) => (
+            <li key={`prod-${product.name}`}>
+              <Image
+                src={product.url}
+                width="100px"
+                height="100px"
+                css={css``}
+              />
+              <Link href={`/${product.url}`}>
+                <a>view here</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div
           css={css`
             z-index: -1;
@@ -38,21 +53,11 @@ export default function Home() {
               opacity: 0.5;
             `}
           />
-          <Image
-            src="/silhouette.png"
-            alt="Vercel Logo"
-            width="500px"
-            height="500px"
-          />
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/" target="_blank" rel="noopener noreferrer">
           www.umbrella-shop.com{' '}
           <span className={styles.logo}>
             <Image

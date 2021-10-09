@@ -488,6 +488,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.7.tgz#82f83dcc2eb9b1e1d559b3aca96783e285eb8592"
   integrity sha512-3Zi2LGbCLDz4IIL7ir6wD0u/ggHotLkK5SlVzFzTcYaNgPR4MAt/9JYZqXWKcofPWEoptfpnCJU8Bq9sxw8QUg==
 
+"@types/js-cookie@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-3.0.0.tgz#6dcc3ab167251ace6964310789d8ea80f732a82c"
+  integrity sha512-GDVwSzwBm4OdQajFCit2UMxskZVcOhs/hYeOvzVW1R+iW6ZOVIBgD+RSrYCtPT0pNBnwNgRaoPPKfoXcwDo+hg==
+
 "@types/json-schema@^7.0.7":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
@@ -538,6 +543,13 @@
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@types/sharp@^0.29.2":
+  version "0.29.2"
+  resolved "https://registry.yarnpkg.com/@types/sharp/-/sharp-0.29.2.tgz#b4e932e982e258d1013236c8b4bcc14f9883c9a3"
+  integrity sha512-tIbMvtPa8kMyFMKNhpsPT1HO3CgXLuiCAA8bxHAGAZLyALpYvYc4hUu3pu0+3oExQA5LwvHrWp+OilgXCYVQgg==
+  dependencies:
+    "@types/node" "*"
 
 "@typescript-eslint/eslint-plugin@^4.21.0":
   version "4.33.0"

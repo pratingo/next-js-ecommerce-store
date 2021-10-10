@@ -51,10 +51,26 @@ export default function Products({ products }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const { products } = await import('../../util/database');
-
+  // console.log(context.req.cookies.someCookie);
+  // console.log(context.req.headers.cookie);
   return {
     props: { products },
   };
 }
+
+// const glorifiedUsers = users.map((user) => {
+//   return {
+//     ...users,
+//     following: following.some((id) => {
+//       return user.id === id;
+//     })
+//   }
+// })
+
+// return {
+//   props: {
+//     users: glorifiedUsers
+//   }
+// }

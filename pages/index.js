@@ -14,6 +14,10 @@ const rotate = css`
       transform: rotate(359deg);
     }
   }
+
+  padding: 50px;
+  animation: rotation 5s infinite linear;
+  animation-timing-function: ease-in;
 `;
 
 export default function Home() {
@@ -37,14 +41,6 @@ export default function Home() {
             height="500px"
             css={css`
               padding: 50px;
-              @keyframes rotation {
-                from {
-                  transform: rotateZ(0deg);
-                }
-                to {
-                  transform: rotateZ(359deg);
-                }
-              }
               animation: rotation 5s infinite linear;
               animation-timing-function: ease-in;
             `}

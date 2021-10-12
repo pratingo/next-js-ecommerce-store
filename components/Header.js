@@ -24,7 +24,7 @@ const navStyles = css`
   }
 `;
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div css={navStyles}>
       <Head>
@@ -51,6 +51,8 @@ export default function Header() {
           </span>
         </nav>
         <div id="cart">
+          <span>{JSON.stringify(props.totalProductsCount)}</span>
+
           <Link href="/cart">
             <a>
               <Image src="/cart.png" width="35px" height="35px" />

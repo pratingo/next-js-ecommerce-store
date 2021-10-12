@@ -1,7 +1,5 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Main from '../components/Main';
 import styles from '../styles/Home.module.css';
 
@@ -23,7 +21,6 @@ const rotate = css`
 export default function Home() {
   return (
     <div>
-      <Header />
       <Main>
         <h1 className={styles.title}>Umbrella Shop</h1>
 
@@ -48,7 +45,6 @@ export default function Home() {
           />
         </div>
       </Main>
-      <Footer />
     </div>
   );
 }

@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useState } from 'react';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 import Main from '../../components/Main';
 import { getParsedCookie, setParsedCookie } from '../../util/cookies';
+import { getProduct } from '../../util/database';
 
 export default function Product({ product }) {
   const [cart, setCart] = useState(getParsedCookie('cart') || []);
@@ -35,15 +34,13 @@ export default function Product({ product }) {
   if (!product) {
     return (
       <div>
-        <Header />
-        <Main>product site unknown</Main>
-        <Footer />
+        <Main />
+        product not found
       </div>
     );
   }
   return (
     <div>
-      <Header />
       <Main>
         <h2>{product.name}</h2>
         <Image src={product.url} width="300px" height="300px" css={css``} />
@@ -70,19 +67,24 @@ export default function Product({ product }) {
         <button onClick={handleAddToCartClick}>Add to cart</button>
         <button onClick={handleDeleteFromCartClick}>Delete from cart</button>
       </Main>
-      <Footer />
     </div>
   );
 }
 
 export async function getServerSideProps(context) {
-  const { products } = await import('../../util/database');
-  console.log(context.query.productId);
-  const productId = context.query.productId;
+  console.log('context', context.query.productId);
+  const product = await getProduct(context.query.productId);
+  console.log(product);
+  // const { products } = await import('../../util/database');
+  // await getUsers();
+  // const products = await getProductss();
+  // console.log(products);
+  // console.log(context.query.productId);
+  // const productId = context.query.productId;
 
-  const product = products.find((productItem) => {
-    return productItem.id === Number.parseInt(productId);
-  });
+  // const product = products.find((productItem) => {
+  //   return productItem.id === Number.parseInt(productId);
+  // });
   if (!product) {
     return {
       props: {},

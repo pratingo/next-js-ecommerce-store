@@ -1,14 +1,12 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 import Main from '../../components/Main';
+import { getProductss } from '../../util/database';
 
 export default function Products({ products }) {
   return (
     <div>
-      <Header />
       <Main>
         <ul
           css={css`
@@ -46,13 +44,14 @@ export default function Products({ products }) {
             ))}
         </ul>
       </Main>
-      <Footer />
     </div>
   );
 }
 
-export async function getServerSideProps(context) {
-  const { products } = await import('../../util/database');
+export async function getServerSideProps() {
+  // const { products } = await import('../../util/database');
+  const products = await getProductss();
+
   // console.log(context.req.cookies.someCookie);
   // console.log(context.req.headers.cookie);
   return {

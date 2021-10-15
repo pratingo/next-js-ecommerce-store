@@ -11,13 +11,17 @@ export default function Product({ product }) {
 
   function handleAddToCartClick() {
     if (productAmount > 0) {
-      setParsedCookie('cart', [
-        ...cart,
-        {
-          productId: product.id,
-          productAmount,
-        },
-      ]);
+      setParsedCookie(
+        'cart',
+        [
+          ...cart,
+          {
+            productId: product.id,
+            productAmount,
+          },
+        ],
+        { path: '../cart' },
+      );
     }
     setProductAmount(0);
   }
@@ -72,9 +76,9 @@ export default function Product({ product }) {
 }
 
 export async function getServerSideProps(context) {
-  console.log('context', context.query.productId);
+  // console.log('context', context.query.productId);
   const product = await getProduct(context.query.productId);
-  console.log(product);
+  // console.log(product);
   // const { products } = await import('../../util/database');
   // await getUsers();
   // const products = await getProductss();

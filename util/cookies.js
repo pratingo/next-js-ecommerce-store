@@ -8,6 +8,6 @@ export function getParsedCookie(key) {
   }
 }
 
-export function setParsedCookie(key, value) {
-  Cookies.set(key, JSON.stringify(value));
+export function setParsedCookie(key, value, path) {
+  Cookies.set(key, JSON.stringify(value, path));
 }

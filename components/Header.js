@@ -55,9 +55,17 @@ export default function Header(props) {
 
           <Link href="/cart">
             <a>
-              <Image src="/cart.png" width="35px" height="35px" />
+              <Image
+                title="Go to cart"
+                src="/cart.png"
+                width="35px"
+                height="35px"
+              />
             </a>
           </Link>
+          {/* <Link href="/admin/products">
+            <a>Admin</a>
+          </Link> */}
         </div>
       </header>
     </div>
